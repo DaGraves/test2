@@ -1,7 +1,14 @@
 import {ADD_COMMENT} from './actions';
-
 const initialState = {
-    comments: []
+ comments: []
 };
 
-export default undefined; // Change me!
+export default function(state = initialState, action){
+ if(action.type === ADD_COMMENT){
+    return Object.assign({}, state, {
+        comments: action.comment
+    });
+}
+
+return state;
+}
